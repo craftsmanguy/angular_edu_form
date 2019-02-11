@@ -27,7 +27,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "./node_modules/bootstrap/dist/css/bootstrap.css"
+              }
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -128,6 +131,41 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "userInterfaces": {
+      "root": "projects/user-interfaces",
+      "sourceRoot": "projects/user-interfaces/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/user-interfaces/tsconfig.lib.json",
+            "project": "projects/user-interfaces/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/user-interfaces/src/test.ts",
+            "tsConfig": "projects/user-interfaces/tsconfig.spec.json",
+            "karmaConfig": "projects/user-interfaces/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/user-interfaces/tsconfig.lib.json",
+              "projects/user-interfaces/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]
