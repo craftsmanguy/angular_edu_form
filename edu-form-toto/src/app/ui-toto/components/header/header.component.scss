@@ -1,3 +1,11 @@
+@import 'fonts';
+
 h1 {
   text-align: center;
+  font-size: $h1-fontsize / 2; //réutiliser les variables globales au maximum
+  // plus haut car combiné à un selector d'attribut
 }
+
+
+body > footer h1 {}  // 3 selector com
+body > footer h2 {}

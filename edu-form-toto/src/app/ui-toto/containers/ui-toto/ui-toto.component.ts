@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoderbaseUiService } from '@coderbase/ui';
 
-
 @Component({
   selector: 'app-ui-toto',
   templateUrl: './ui-toto.component.html',

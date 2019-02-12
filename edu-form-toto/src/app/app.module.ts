@@ -1,13 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { UiTotoModule } from './ui-toto/ui-toto.module';
+import { AppComponent } from './app.component';
 import { ClientsModule } from './clients/clients.module';
 import { LoginModule } from './login/login.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { SharedModule } from './shared/shared.module';
+import { UiTotoModule } from './ui-toto/ui-toto.module';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -16,10 +17,9 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     UiTotoModule,
-    ClientsModule,
     LoginModule,
-    PageNotFoundModule,
     SharedModule,
+    AppRoutingModule,
     NgbModule.forRoot()
   ],
   providers: [],

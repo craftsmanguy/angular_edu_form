@@ -5,11 +5,14 @@ import { UiTotoComponent } from './containers/ui-toto/ui-toto.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
+import { RouterModule } from '@angular/router';
+
+
 
 @NgModule({
   declarations: [UiTotoComponent, FooterComponent, HeaderComponent, NavComponent],
   imports: [
-    CommonModule, CoderbaseUiModule
+    CommonModule, CoderbaseUiModule, RouterModule
   ],
   exports: [UiTotoComponent]
 })
