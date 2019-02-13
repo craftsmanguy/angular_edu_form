@@ -1,14 +1,14 @@
-import { PrestationsI } from '../interfaces/prestations-i';
 import { State } from '../enums/state.enum';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { PrestationsI } from '../interfaces/prestations-i';
+import { Client } from './client.model';
 
 export class Prestation implements PrestationsI {
   id: string;
   typePresta: string;
-  client: string;
+  client: Client;
   tjmHt = 0;
   nbJours: number;
-  tauxTva = 0;
+  tauxTva = 20;
   comment: string;
   state = State.OPTION;
 

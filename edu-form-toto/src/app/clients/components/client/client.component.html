@@ -1,0 +1,15 @@
+<tr>
+    <td>{{ client.id }}</td>
+    <td>{{ client.name }}</td>
+    <td>{{ client.email }}</td>
+
+    <td [appType]="client.type">
+      <select class="form-control" (change)="changeState($event)">
+        <option
+          *ngFor="let type of (types | keyvalue)"
+          [value]="type.key"
+          [selected]="client.type === type.value"
+          >{{ type.value }}</option>
+      </select>
+    </td>
+  </tr>

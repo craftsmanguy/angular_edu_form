@@ -1,0 +1,17 @@
+<tr>
+  <td>{{ order.typePresta }}</td>
+  <td>{{ order.client.name }}</td>
+  <td>{{ order.nbJours }}</td>
+  <td>{{ order.tjmHt }}</td>
+  <td>{{ order | total: "HT" }}</td>
+  <td>{{ order | total: "TTC" }}</td>
+  <td [appState]="order.state">
+    <select class="form-control" (change)="changeState($event)">
+      <option
+        *ngFor="let state of (states | keyvalue)"
+        [value]="state.key"
+        [selected]="order.state === state.value"
+        >{{ state.value }}</option>
+    </select>
+  </td>
+</tr>

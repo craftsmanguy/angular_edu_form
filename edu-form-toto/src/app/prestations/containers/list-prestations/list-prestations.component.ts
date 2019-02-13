@@ -9,6 +9,7 @@ import { PrestationService } from '../../services/prestation.service';
 })
 export class ListPrestationsComponent implements OnInit {
   collection: Prestation[];
+  headers = ['type', 'client', 'nb jours', 'tjm ht', 'total ht', 'total ttc', 'state'];
 
   constructor(
     private ps: PrestationService
@@ -17,5 +18,7 @@ export class ListPrestationsComponent implements OnInit {
   ngOnInit() {
     this.collection = this.ps.collection;
   }
+
+
 
 }

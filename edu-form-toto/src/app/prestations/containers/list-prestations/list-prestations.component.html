@@ -1,1 +1,5 @@
-<div>
+<app-tableau [headers]="headers">
+  <app-prestation *ngFor="let order of collection" [order]="order"></app-prestation>
+</app-tableau>
+
+
