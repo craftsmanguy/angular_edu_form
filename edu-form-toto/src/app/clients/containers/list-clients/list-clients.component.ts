@@ -15,6 +15,8 @@ export class ListClientsComponent implements OnInit {
     'email',
     'type'
   ];
+  resource = 'add';
+  action = 'ajouter un client' ;
 
   constructor(private clientS: ClientService) {}
 

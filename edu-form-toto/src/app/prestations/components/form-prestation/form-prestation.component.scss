@@ -1,0 +1,42 @@
+@import 'theme';
+@import 'layout';
+
+.myform {
+  width: 90%;
+  border: 1px solid darken($light-color, 10);
+  padding: 1rem;
+  border-radius: 15px;
+  background: $light-color;
+  margin: auto;
+  position: relative;
+  top: -15px;
+  button {
+    width: 100%;
+  }
+}
+
+@media (min-width: $md-breakpoint) {
+  .myform {
+    width: 60%;
+  }
+}
+
+:host-context(app-template-a) .myform {
+  position: relative;
+  margin-bottom: 50px;
+  button {
+    background: $palette-color-one;
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+  }
+}
+
+:host-context(app-template-b) .myform {
+  position: relative;
+  margin-bottom: 50px;
+  button {
+    background: $dark-color;
+    position: initial;
+  }
+}

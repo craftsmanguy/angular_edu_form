@@ -1,0 +1,52 @@
+<div class="myform">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="type">type</label>
+      <input type="text" class="form-control" id="type" formControlName="typePresta"/>
+      <div class="alert alert-danger" *ngIf="form.get('typePresta').invalid && form.get('typePresta').touched">Champ obligatoire</div>
+    </div>
+
+    <div class="form-group">
+      <label for="client">client</label>
+      <input type="text" class="form-control" id="client" formControlName="client"/>
+      <div class="alert alert-danger" *ngIf="form.get('client').errors['required'] && form.get('client').touched">Champ obligatoire</div>
+      <div class="alert alert-danger" *ngIf="form.get('client').errors['minLength'] && form.get('client').touched">Champ supp à 3</div>
+    </div>
+
+    <div class="form-group">
+      <label for="nbjour">nbjour</label>
+      <input type="number" class="form-control" id="nbjour" formControlName="nbJours"/>
+    </div>
+
+    <div class="form-group">
+      <label for="tjmht">jtmht</label>
+      <input type="number" class="form-control" id="tjmht" formControlName="tjmHt"/>
+    </div>
+
+    <div class="form-group">
+      <label for="tva">tva</label>
+      <input type="number" class="form-control" id="tva" formControlName="tauxTva"/>
+    </div>
+
+    <div class="form-group">
+      <label for="state">state</label>
+      <select name="state" class="form-control" id="state" formControlName="state">
+        <option
+          *ngFor="let state of (states | keyvalue)"
+          [value]="state.value"
+          >{{ state.value }}</option
+        >
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="comment">comment</label>
+      <textarea class="form-control" id="comment" formControlName="comment"></textarea>
+    </div>
+
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">
+      Submit
+    </button>
+  </form>
+</div>
+{{ init | json }}

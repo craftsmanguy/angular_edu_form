@@ -11,13 +11,11 @@ export class StateDirective implements OnChanges {
   constructor() {}
 
   ngOnChanges() {
-    console.log(this.appState);
     this.nomClass = this.formatClass(this.appState);
   }
 
   formatClass(state: State): string {
     // return `state-`
-    console.log(state.toLowerCase);
     return `state-${state.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase()}`;
   }
 }

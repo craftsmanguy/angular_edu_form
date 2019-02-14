@@ -1,11 +1,10 @@
 import { State } from '../enums/state.enum';
 import { PrestationsI } from '../interfaces/prestations-i';
-import { Client } from './client.model';
 
 export class Prestation implements PrestationsI {
   id: string;
   typePresta: string;
-  client: Client;
+  client: string;
   tjmHt = 0;
   nbJours: number;
   tauxTva = 20;

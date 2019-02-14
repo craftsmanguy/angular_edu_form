@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Client } from 'src/app/shared/models/client.model';
-import { ClientService } from '../../services/client.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-page-clients',
@@ -8,10 +6,8 @@ import { ClientService } from '../../services/client.service';
   styleUrls: ['./page-clients.component.scss']
 })
 export class PageClientsComponent {
+  title = 'Clients';
+  paraph = 'Ici on aime bien les gentils clients';
 
-  constructor() {
-
-  }
-
-
+  constructor() {}
 }

@@ -21,3 +21,8 @@
   background: lighten($palette-color-one, 30);
 }
 
+app-list-clients #tab thead {
+  background: lighten($dark-color, 10);
+  color: $light-color;
+}
+

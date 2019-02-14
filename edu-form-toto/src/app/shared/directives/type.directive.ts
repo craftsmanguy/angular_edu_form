@@ -11,12 +11,10 @@ export class TypeDirective implements OnChanges {
   constructor() {}
 
   ngOnChanges() {
-    console.log(this.appType);
     this.nomClass = this.formatClass(this.appType);
   }
 
   formatClass(type: Type): string {
-    console.log(type.toLowerCase);
     return `type-${type
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')

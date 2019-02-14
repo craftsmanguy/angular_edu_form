@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-prestations.component.scss']
 })
 export class PagePrestationsComponent implements OnInit {
+  title = 'Prestation';
+  paraph = 'Je suis dans les prestations';
+  resource = 'add';
+  action = 'ajouter une prestation' ;
 
   constructor() { }
 

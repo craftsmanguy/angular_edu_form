@@ -24,4 +24,8 @@ export class PrestationService {
   update(item: Prestation, state: State) {
     item.state = state;
   }
+
+  add(item: Prestation) {
+    this.collection.push(new Prestation(item));
+  }
 }

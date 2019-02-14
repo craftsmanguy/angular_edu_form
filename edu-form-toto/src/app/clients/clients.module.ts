@@ -5,9 +5,11 @@ import { ClientsRoutingModule } from './clients-routing.module';
 import { ClientComponent } from './components/client/client.component';
 import { ListClientsComponent } from './containers/list-clients/list-clients.component';
 import { SharedModule } from '../shared/shared.module';
+import { PageAddClientComponent } from './pages/page-add-client/page-add-client.component';
+import { AddClientComponent } from './containers/add-client/add-client.component';
 
 @NgModule({
-  declarations: [PageClientsComponent, ClientComponent, ListClientsComponent],
+  declarations: [PageClientsComponent, ClientComponent, ListClientsComponent, PageAddClientComponent, AddClientComponent],
   imports: [
     CommonModule,
     ClientsRoutingModule,
