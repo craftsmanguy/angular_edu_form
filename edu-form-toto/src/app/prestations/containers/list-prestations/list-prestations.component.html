@@ -1,5 +1,5 @@
 <app-tableau [headers]="headers">
-  <app-prestation *ngFor="let order of collection" [order]="order"></app-prestation>
+  <app-prestation *ngFor="let order of collection$ | async " [order]="order"></app-prestation>
 </app-tableau>
 
 

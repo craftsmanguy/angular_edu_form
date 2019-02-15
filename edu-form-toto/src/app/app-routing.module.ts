@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { RouterModule, Routes, Router } from '@angular/router';
+import { RouterModule, Routes, Router, PreloadAllModules } from '@angular/router';
 import { PageLoginComponent } from './login/pages/page-login/page-login.component';
 
 const appRoutes: Routes = [
@@ -29,7 +29,9 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(
     appRoutes,
-      { enableTracing: false }
+      { enableTracing: false,
+      preloadingStrategy: PreloadAllModules
+      }
     )],
   exports: [RouterModule]
 })

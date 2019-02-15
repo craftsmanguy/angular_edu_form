@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { environment } from '../environments/environment.prod';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClientsModule } from './clients/clients.module';
 import { LoginModule } from './login/login.module';
-import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { SharedModule } from './shared/shared.module';
 import { UiTotoModule } from './ui-toto/ui-toto.module';
-import { AppRoutingModule } from './app-routing.module';
+
+
 
 
 @NgModule({
@@ -20,7 +23,9 @@ import { AppRoutingModule } from './app-routing.module';
     LoginModule,
     SharedModule,
     AppRoutingModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase, 'edu-form-toto'),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
