@@ -26,7 +26,8 @@ export class ListPrestationsComponent implements OnInit, OnDestroy {
     'tjm ht',
     'total ht',
     'total ttc',
-    'state'
+    'state',
+    'édition'
   ];
 
   constructor(private ps: PrestationService, private renderer: Renderer2) {}

@@ -8,6 +8,8 @@ import { TemplatesModule } from '../templates/templates.module';
 import { LienComponent } from './boutons/lien/lien.component';
 import { RouterModule } from '@angular/router';
 import { NavigationLienComponent } from './boutons/navigation-lien/navigation-lien.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { NavigationLienComponent } from './boutons/navigation-lien/navigation-li
     LienComponent,
     NavigationLienComponent
   ],
-  imports: [CommonModule, TemplatesModule, RouterModule],
+  imports: [CommonModule, TemplatesModule, RouterModule, FontAwesomeModule],
   exports: [
     TotalPipe,
     TableauComponent,
@@ -26,7 +28,8 @@ import { NavigationLienComponent } from './boutons/navigation-lien/navigation-li
     TypeDirective,
     TemplatesModule,
     LienComponent,
-    NavigationLienComponent
+    NavigationLienComponent,
+    FontAwesomeModule
   ]
 })
 export class SharedModule {}

@@ -11,6 +11,9 @@ import {
 import { State } from 'src/app/shared/enums/state.enum';
 import { Prestation } from 'src/app/shared/models/prestation.model';
 import { PrestationService } from '../../services/prestation.service';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-prestation',
@@ -22,8 +25,11 @@ export class PrestationComponent implements OnInit {
   @ViewChild('first') elem: ElementRef;
   @Output() clicked: EventEmitter <ElementRef> = new EventEmitter();
   states = State;
+  faEdit = faEdit;
 
-  constructor(private ps: PrestationService) {}
+  constructor(
+    private ps: PrestationService,
+    private router: Router) {}
 
   ngOnInit() {}
 
@@ -37,5 +43,9 @@ export class PrestationComponent implements OnInit {
   getDetail() {
     this.clicked.emit(this.elem);
     this.ps.detail$.next(this.order);
+  }
+
+  goToDetail() {
+    this.router.navigate(['prestations/edit', this.order.id]);
   }
 }

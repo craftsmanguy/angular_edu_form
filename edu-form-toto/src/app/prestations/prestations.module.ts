@@ -12,6 +12,8 @@ import { PrestationsRoutingModule } from './prestations-routing.module';
 import { FormPrestaComponent } from './components/form-presta/form-presta.component';
 import { DetailPrestationComponent } from './components/detail-prestation/detail-prestation.component';
 import { CommentPrestationComponent } from './components/comment-prestation/comment-prestation.component';
+import { PageEditPrestationComponent } from './pages/page-edit-prestation/page-edit-prestation.component';
+import { EditPrestationComponent } from './containers/edit-prestation/edit-prestation.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CommentPrestationComponent } from './components/comment-prestation/comm
     FormPrestationComponent,
     FormPrestaComponent,
     DetailPrestationComponent,
-    CommentPrestationComponent
+    CommentPrestationComponent,
+    PageEditPrestationComponent,
+    EditPrestationComponent
   ],
   imports: [
     CommonModule,

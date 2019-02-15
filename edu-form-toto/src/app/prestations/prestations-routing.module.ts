@@ -4,6 +4,7 @@ import { PagePrestationsComponent } from './pages/page-prestations/page-prestati
 import { PageAddPrestationComponent } from './pages/page-add-prestation/page-add-prestation.component';
 import { DetailPrestationComponent } from './components/detail-prestation/detail-prestation.component';
 import { CommentPrestationComponent } from './components/comment-prestation/comment-prestation.component';
+import { PageEditPrestationComponent } from './pages/page-edit-prestation/page-edit-prestation.component';
 
 const appRoutes: Routes = [
   {
@@ -18,6 +19,10 @@ const appRoutes: Routes = [
   {
     path: 'add',
     component: PageAddPrestationComponent
+  },
+  {
+    path: 'edit/:id',
+    component: PageEditPrestationComponent
   },
   {
     path: 'update',

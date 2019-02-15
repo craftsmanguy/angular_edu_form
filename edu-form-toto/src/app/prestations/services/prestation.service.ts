@@ -85,4 +85,9 @@ export class PrestationService {
 
     // return this.http.delete(`urlapi/prestations/delete/${item.id}`);
   }
+
+  getPrestation(id: string): Observable<Prestation> {
+    return this.itemsCollection.doc<Prestation>(id).valueChanges();
+    // return this.http.get(${API_URL}/prestations/${id});
+  }
 }
