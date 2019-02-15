@@ -12,7 +12,7 @@ import { PrestationService } from '../../services/prestation.service';
 export class EditPrestationComponent implements OnInit {
 
   order$: Observable<Prestation>;
-  id: string
+  id: string;
 
   constructor(
     private prestationService: PrestationService,
@@ -23,14 +23,15 @@ export class EditPrestationComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      const id = params.get('id');
-      this.order$ = this.prestationService.getPrestation(id);
+      this.id = params.get('id');
+      this.order$ = this.prestationService.getPrestation(this.id);
     });
   }
 
   update(prestation: Prestation) {
+    prestation.id = this.id;
     this.prestationService.update(prestation).then(data => {
-      this.router.navigate(['../'], { relativeTo: this.route });
+      this.router.navigate(['prestations'], { relativeTo: this.route });
     });
   }
 
