@@ -1,12 +1,12 @@
-<tr>
-  <td>{{ order.typePresta }}</td>
+<tr (click)="getDetail()">
+  <td #first>{{ order.typePresta }}</td>
   <td>{{ order.client }}</td>
   <td>{{ order.nbJours }}</td>
   <td>{{ order.tjmHt }}</td>
   <td>{{ order | total: "HT" }}</td>
   <td>{{ order | total: "TTC" }}</td>
   <td [appState]="order.state">
-    <select class="form-control" (change)="changeState($event)">
+    <select class="form-control" (change)="changeState($event)" (click)="$event.stopPropagation">
       <option
         *ngFor="let state of (states | keyvalue)"
         [value]="state.key"

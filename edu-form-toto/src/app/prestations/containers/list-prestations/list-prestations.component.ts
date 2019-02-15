@@ -1,7 +1,13 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnDestroy,
+  OnInit,
+  Renderer2,
+  ElementRef
+} from '@angular/core';
+import { Observable } from 'rxjs';
 import { Prestation } from 'src/app/shared/models/prestation.model';
 import { PrestationService } from '../../services/prestation.service';
-import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list-prestations',
@@ -11,6 +17,7 @@ import { Subscription, Observable } from 'rxjs';
 export class ListPrestationsComponent implements OnInit, OnDestroy {
   // collection: Prestation[];
   collection$: Observable<Prestation[]>;
+  oldElement: ElementRef;
   // private sub: Subscription;
   headers = [
     'type',
@@ -22,13 +29,21 @@ export class ListPrestationsComponent implements OnInit, OnDestroy {
     'state'
   ];
 
-  constructor(private ps: PrestationService) {}
+  constructor(private ps: PrestationService, private renderer: Renderer2) {}
 
   ngOnInit() {
     // this.sub = this.ps.collection.subscribe(data => {
     //   this.collection = data;
     // });
     this.collection$ = this.ps.collection;
+  }
+
+  colorTd(element) {
+    if (this.oldElement) {
+      this.renderer.removeClass(this.oldElement.nativeElement, 'active');
+    }
+    this.oldElement = element;
+    this.renderer.addClass(element.nativeElement, 'active');
   }
 
   ngOnDestroy() {

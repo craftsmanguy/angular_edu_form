@@ -7,14 +7,26 @@ import { TypeDirective } from './directives/type.directive';
 import { TemplatesModule } from '../templates/templates.module';
 import { LienComponent } from './boutons/lien/lien.component';
 import { RouterModule } from '@angular/router';
+import { NavigationLienComponent } from './boutons/navigation-lien/navigation-lien.component';
 
 @NgModule({
-  declarations: [TotalPipe, TableauComponent, StateDirective, TypeDirective, LienComponent],
-  imports: [
-    CommonModule,
-    TemplatesModule,
-    RouterModule
+  declarations: [
+    TotalPipe,
+    TableauComponent,
+    StateDirective,
+    TypeDirective,
+    LienComponent,
+    NavigationLienComponent
   ],
-  exports: [TotalPipe, TableauComponent, StateDirective, TypeDirective, TemplatesModule, LienComponent]
+  imports: [CommonModule, TemplatesModule, RouterModule],
+  exports: [
+    TotalPipe,
+    TableauComponent,
+    StateDirective,
+    TypeDirective,
+    TemplatesModule,
+    LienComponent,
+    NavigationLienComponent
+  ]
 })
-export class SharedModule { }
+export class SharedModule {}

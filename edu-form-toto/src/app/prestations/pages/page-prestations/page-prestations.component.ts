@@ -9,11 +9,19 @@ export class PagePrestationsComponent implements OnInit {
   title = 'Prestation';
   paraph = 'Je suis dans les prestations';
   resource = 'add';
-  action = 'ajouter une prestation' ;
+  action = 'ajouter une prestation';
+  listeLinks = [
+    {
+      route: 'detail',
+      label: 'detail'
+    },
+    {
+      route: 'comment',
+      label: 'comment'
+    }
+  ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

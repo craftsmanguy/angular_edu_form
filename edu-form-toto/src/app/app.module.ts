@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -9,7 +10,6 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { SharedModule } from './shared/shared.module';
 import { UiTotoModule } from './ui-toto/ui-toto.module';
-
 
 
 
@@ -25,7 +25,8 @@ import { UiTotoModule } from './ui-toto/ui-toto.module';
     AppRoutingModule,
     NgbModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase, 'edu-form-toto'),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
